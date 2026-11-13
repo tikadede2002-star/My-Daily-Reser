@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Daily Reset</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 25px 18px;
+  background: #f8f3ed;
+  color: #55483f;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+}
+
+header {
+  padding: 25px 0;
+}
+
+h1 {
+  font-family: Georgia, serif;
+  font-size: 36px;
+  margin-bottom: 8px;
+  color: #795e60;
+}
+
+.subtitle {
+  color: #9b8580;
+  font-size: 14px;
+}
+
+.card {
+  background: #fffdfb;
+  border-radius: 18px;
+  padding: 22px;
+  margin: 18px 0;
+  box-shadow: 0 3px 12px #00000008;
+}
+
+h2 {
+  font-size: 18px;
+  margin-top: 0;
+}
+
+input {
+  padding: 12px;
+  border: 1px solid #e8dcd6;
+  border-radius: 10px;
+  width: 100%;
+  margin: 8px 0 14px;
+  font-size: 16px;
+}
+
+button {
+  background: #b98791;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.result {
+  color: #92717b;
+  margin-top: 12px;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header>
+  <h1>My Daily Reset ♡</h1>
+  <p class="subtitle">A little progress every day.</p>
+</header>
+
+<div class="card">
+  <h2>🌷 Today's Focus</h2>
+  <p>Show up for yourself, even on difficult days.</p>
+</div>
+
+<div class="card">
+  <h2>💧 Water Tracker</h2>
+  <p>Track your daily water intake.</p>
+  <button onclick="addWater()">+ Add a glass</button>
+  <p class="result" id="water">0 glasses today</p>
+</div>
+
+<div class="card">
+  <h2>⚖️ Weight Tracker</h2>
+  <input type="number" id="weight" placeholder="Enter your weight (kg)" step="0.1">
+  <button onclick="saveWeight()">Save weight</button>
+  <p class="result" id="weightResult"></p>
+</div>
+
+<div class="card">
+  <h2>✨ Daily Reminder</h2>
+  <p>You don't have to be perfect. You just have to keep going.</p>
+</div>
+
+</div>
+
+<script>
+let glasses = 0;
+
+function addWater() {
+  glasses++;
+  document.getElementById("water").innerText =
+    glasses + " glasses today";
+}
+
+function saveWeight() {
+  const weight = document.getElementById("weight").value;
+
+  if (!weight || weight <= 0) {
+    alert("Please enter a valid weight.");
+    return;
+  }
+
+  document.getElementById("weightResult").innerText =
+    "Today's weight: " + weight + " kg ♡";
+}
+</script>
+
+</body>
+</html>
